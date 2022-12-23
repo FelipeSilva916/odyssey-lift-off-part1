@@ -15,3 +15,17 @@ class TrackAPI extends RESTDatasource {
 }
 
 module.exports = TrackAPI;
+
+class SpaceCatsAPI extends RESTDataSource {
+  constructor() {
+    super();
+    this.baseURL = "https://api.spacexdata.com/v4/";
+  }
+  getSpaceCats() {
+    return this.get("spaceCats");
+  }
+
+  getMissions(catId) {
+    return this.get(`spaceCats/${catId}/missions`);
+  }
+}
