@@ -23,6 +23,16 @@ const typeDefs = gql`
     description: String
     "The number of times a track has been viewed"
     numberOfViews: Int
+    "The track's complete array of modules"
+    modules: [Module!]!
+  }
+
+  type Module {
+    id: ID!
+    "The module's title"
+    title: String!
+    "The module's length in minutes"
+    length: Int
   }
 
   "Author of a complete Track or a Module"
